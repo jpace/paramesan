@@ -1,6 +1,8 @@
 #!/usr/bin/ruby -w
 # -*- ruby -*-
 
+require "paramesan/version"
+
 module Paramesan
   def param_test paramlist, &blk
     puts "self: #{self}"
