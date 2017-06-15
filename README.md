@@ -15,7 +15,9 @@ and output as data that go through the process.
 I looked for the equivalent in Ruby, and the closest that I found was
 [param_test](https://www.ruby-toolbox.com/projects/param_test). That, however, uses activesupport,
 which is included in Rails, but I wanted a version that ran in a pure Ruby environment, using only
-Test::Unit.
+Test::Unit, which I prefer over Minitest, mainly because the latter uses notifications that don't
+work especially well with Emacs, such as changing the mode line to show the success/failure status,
+but do not afterward change back to the default settings.
 
 Ergo, paramesan, which as of this writing, allows a very primitive set of options for parameterized
 tests.
@@ -23,6 +25,8 @@ tests.
 # Example
 
 ## Before
+
+31 lines.
 
 ```ruby
 require 'pvn/log/options'
@@ -59,6 +63,8 @@ end
 ```
 
 ## After
+
+20 lines, 35% fewer.
 
 ```ruby
 require 'pvn/log/options'
