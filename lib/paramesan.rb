@@ -6,8 +6,6 @@ require "paramesan/version"
 module Paramesan
   module ClassMethods
     def param_test paramlist, &blk
-      puts "self: #{self}"
-      
       paramlist.each do |params|
         basename = "test_" + params.to_s.gsub(Regexp.new('[^\w]+'), '_')
         mname = basename
