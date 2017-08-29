@@ -17,7 +17,6 @@ module Paramesan
 
         define_method mname do
           instance_exec(params, &blk)
-          puts
         end
       end
     end
