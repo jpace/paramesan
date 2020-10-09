@@ -24,9 +24,14 @@ module Paramesan
     end
 
     def param_test_name params, idx, count
-      nonword = Regexp.new '[^\w]+'
-      elements = params.collect { |param| param.to_s.gsub nonword, '_' }
-      "test_" + idx.to_s + "_of_" + count.to_s + "__" + elements.join('_')
+      name = "test_" + idx.to_s + "_of_" + count.to_s + "__"
+      if params.kind_of?(Enumerable)
+        nonword = Regexp.new '[^\w]+'
+        elements = params.collect { |param| param.to_s.gsub nonword, '_' }
+        name << elements.join('_')
+      else
+        name << params.to_s
+      end
     end
   end
 

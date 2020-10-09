@@ -25,6 +25,11 @@ class ParamesanTest < Test::Unit::TestCase
   ] do |exp, result|
   end
 
+  param_test [
+    :one
+  ] do |exp, result|
+  end
+
   def test_methods
     expected = [
       "test_0_of_2__a_b",
